@@ -6,7 +6,6 @@ import com.ducph.consoledrawing.command.CreateCommand;
 import com.ducph.consoledrawing.command.DrawLineCommand;
 import com.ducph.consoledrawing.command.DrawRectangleCommand;
 import com.ducph.consoledrawing.command.QuitCommand;
-import com.ducph.consoledrawing.exception.InvalidCommandException;
 import com.ducph.consoledrawing.model.CommandType;
 
 
@@ -15,7 +14,7 @@ public class CommandFactory {
     private CommandFactory() {
     }
 
-    public static Command getCommand(CommandType commandType, String[] params) throws InvalidCommandException {
+    public static Command getCommand(CommandType commandType, String[] params) {
         switch (commandType) {
             case Q:
                 return new QuitCommand();
@@ -28,7 +27,7 @@ public class CommandFactory {
             case B:
                 return new BucketFillCommand(params);
             default:
-                throw new InvalidCommandException();
+                throw new IllegalArgumentException();
         }
     }
 }

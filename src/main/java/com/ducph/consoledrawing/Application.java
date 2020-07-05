@@ -1,7 +1,6 @@
 package com.ducph.consoledrawing;
 
 import com.ducph.consoledrawing.command.*;
-import com.ducph.consoledrawing.exception.InvalidCommandException;
 import com.ducph.consoledrawing.exception.InvalidCommandParams;
 import com.ducph.consoledrawing.factory.CommandFactory;
 import com.ducph.consoledrawing.service.CanvasService;
@@ -36,11 +35,11 @@ public class Application {
             CommandType commandType = Utils.extractCommandType(commandLine);
             String[] commandParams = Utils.extractCommandParams(commandLine.split(" "));
             command = CommandFactory.getCommand(commandType, commandParams);
-        } catch (InvalidCommandException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Please enter a valid command.");
         } catch (InvalidCommandParams e) {
             System.out.println("Command syntax is not correct: " + e.getMessage());
-            System.out.println("Refer to following correct syntax: \n" + e.gettipMessage());
+            System.out.println("Refer to following correct syntax: \n" + e.getTipMessage());
         }
 
         if (command instanceof QuitCommand) {

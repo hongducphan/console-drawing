@@ -9,7 +9,7 @@ public class InvalidCommandParams extends RuntimeException {
         this.help = help;
     }
 
-    public String gettipMessage() {
+    public String getTipMessage() {
         return this.help;
     }
 }
