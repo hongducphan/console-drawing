@@ -12,22 +12,22 @@ public class CreateCommandTest {
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate2() {
+    public void testCreateInvalid() {
         new CreateCommand("-11", "1");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate3() {
+    public void testCreateInvalid2() {
         new CreateCommand("1", "-1");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate4() {
+    public void testCreateInvalid3() {
         new CreateCommand("1");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate6() {
+    public void testCreateInvalid4() {
         new CreateCommand();
     }
 }

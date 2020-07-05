@@ -8,47 +8,47 @@ import org.junit.Test;
 
 public class EntityFactoryTest {
     @Test
-    public void getEntityLine1() {
+    public void testGetEntityLine() {
         EntityFactory.getEntity(new DrawLineCommand("1", "2", "1", "22"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityLine2() {
+    public void testGetEntityLineInvalid() {
         EntityFactory.getEntity(new DrawLineCommand("t", "2", "1", "22"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityLine3() {
+    public void testGetEntityLineInvalid2() {
         EntityFactory.getEntity(new DrawLineCommand("-1", "2", "1", "22"));
     }
 
     @Test
-    public void getEntityRectangle1() {
+    public void testGetEntityRectangle() {
         EntityFactory.getEntity(new DrawRectangleCommand("1", "2", "1", "22"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityRectangle2() {
+    public void testGetEntityRectangleInvalid() {
         EntityFactory.getEntity(new DrawRectangleCommand("t", "2", "1", "22"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityRectangle3() {
+    public void testGetEntityRectangleInvalid2() {
         EntityFactory.getEntity(new DrawRectangleCommand("-1", "2", "1", "22"));
     }
 
     @Test
-    public void getEntityBucketFill1() {
+    public void testGetEntityBucketFill() {
         EntityFactory.getEntity(new BucketFillCommand("1", "2", "c"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityBucketFill2() {
+    public void testGetEntityBucketFillInvalid() {
         EntityFactory.getEntity(new DrawRectangleCommand("t", "2", "1", "22"));
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void getEntityBucketFill3() {
+    public void testGetEntityBucketFillInvalid2() {
         EntityFactory.getEntity(new DrawRectangleCommand("-1", "2", "o"));
     }
 }

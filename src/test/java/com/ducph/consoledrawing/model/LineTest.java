@@ -6,17 +6,17 @@ import org.junit.Test;
 public class LineTest {
 
     @Test
-    public void create() {
+    public void testCreate() {
         new Line(1, 2, 1, 5);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create3() {
+    public void testCreateInvalid() {
         new Line(-1, 2, 1, 5);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create4() {
+    public void testCreateInvalid2() {
         new Line(1, -2, 3, 3);
     }
 }

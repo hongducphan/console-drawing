@@ -25,7 +25,6 @@ public class CanvasServiceImplTest {
     // empty canvas
     @Test
     public void create() {
-
         Assert.assertEquals(canvas.render(),
                 "----------------------\n" +
                 "|                    |\n" +
@@ -37,7 +36,7 @@ public class CanvasServiceImplTest {
 
     // add vertical line
     @Test
-    public void addEntity() {
+    public void testAddEntity() {
         Line line = new Line(1, 2, 1, 3);
         canvas.addEntity(line);
 
@@ -53,7 +52,7 @@ public class CanvasServiceImplTest {
 
     // add vertical line that is trimmed
     @Test
-    public void addEntity2() {
+    public void testAddEntity2() {
         Line line = new Line(1, 2, 1, 22);
         canvas.addEntity(line);
 
@@ -69,7 +68,7 @@ public class CanvasServiceImplTest {
 
     // add horizontal line
     @Test
-    public void addEntity3() {
+    public void testAddEntity3() {
         Line line = new Line(2, 2, 4, 2);
         canvas.addEntity(line);
 
@@ -84,7 +83,7 @@ public class CanvasServiceImplTest {
 
     // add horizontal line that is trimmed
     @Test
-    public void addEntity4() {
+    public void testAddEntity4() {
         Line line = new Line(1, 2, 30, 2);
         canvas.addEntity(line);
 
@@ -99,7 +98,7 @@ public class CanvasServiceImplTest {
 
     // line outside of canvas
     @Test()
-    public void addEntity6() {
+    public void testAddEntity6() {
         Line line1 = new Line(100, 20, 100, 22);
         expectedException.expect(InvalidEntityException.class);
         canvas.addEntity(line1);
@@ -107,7 +106,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle
     @Test()
-    public void addEntity7() {
+    public void testAddEntity7() {
         Rectangle rectangle = new Rectangle(100, 20, 100, 22);
         expectedException.expect(InvalidEntityException.class);
         canvas.addEntity(rectangle);
@@ -115,7 +114,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle
     @Test()
-    public void addEntity8() {
+    public void testAddEntity8() {
         Rectangle rectangle = new Rectangle(14, 1, 18, 3);
         canvas.addEntity(rectangle);
 
@@ -130,7 +129,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle that exceed the canvas height
     @Test()
-    public void addEntity9() {
+    public void testAddEntity9() {
         Rectangle rectangle = new Rectangle(2, 1, 4, 30);
         canvas.addEntity(rectangle);
 
@@ -145,7 +144,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle that exceed the canvas width
     @Test()
-    public void addEntity10() {
+    public void testAddEntity10() {
         Rectangle rectangle = new Rectangle(2, 1, 40, 3);
         canvas.addEntity(rectangle);
 
@@ -160,7 +159,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle that exceed both the canvas width and height
     @Test()
-    public void addEntity11() {
+    public void testAddEntity11() {
         Rectangle rectangle = new Rectangle(2, 1, 40, 30);
         canvas.addEntity(rectangle);
 
@@ -175,7 +174,7 @@ public class CanvasServiceImplTest {
 
     // add rectangle that is outside
     @Test()
-    public void addEntity111() {
+    public void testAddEntity111() {
         Rectangle rectangle = new Rectangle(20, 100, 40, 102);
         expectedException.expect(InvalidEntityException.class);
         canvas.addEntity(rectangle);
@@ -183,7 +182,7 @@ public class CanvasServiceImplTest {
 
     // bucket fill and empty canvas
     @Test()
-    public void addEntity12() {
+    public void testAddEntity12() {
         BucketFill bucketFill = new BucketFill(2, 1, 'o');
         canvas.addEntity(bucketFill);
 
@@ -198,7 +197,7 @@ public class CanvasServiceImplTest {
 
     // fill a vertical line
     @Test
-    public void addEntity13() {
+    public void testAddEntity13() {
         Line line = new Line(1, 2, 1, 3);
         canvas.addEntity(line);
         BucketFill bucketFill = new BucketFill(1, 2, 'o');
@@ -216,7 +215,7 @@ public class CanvasServiceImplTest {
 
     // fill a rectangle edge
     @Test
-    public void addEntity14() {
+    public void testAddEntity14() {
         Rectangle rectangle = new Rectangle(14, 1, 18, 3);
         canvas.addEntity(rectangle);
         BucketFill bucketFill = new BucketFill(14, 1, 'o');
@@ -234,7 +233,7 @@ public class CanvasServiceImplTest {
 
     // fill a rectangle content
     @Test
-    public void addEntity15() {
+    public void testAddEntity15() {
         Rectangle rectangle = new Rectangle(14, 1, 18, 4);
         canvas.addEntity(rectangle);
         BucketFill bucketFill = new BucketFill(15, 2, 'o');
@@ -252,7 +251,7 @@ public class CanvasServiceImplTest {
 
     //fill blank space
     @Test
-    public void addEntity16() {
+    public void testAddEntity16() {
         Rectangle rectangle = new Rectangle(14, 1, 18, 4);
         canvas.addEntity(rectangle);
         BucketFill bucketFill = new BucketFill(10, 1, 'o');
@@ -275,7 +274,7 @@ public class CanvasServiceImplTest {
 
     // Add multiple model to canvas
     @Test
-    public void addEntity5() {
+    public void testAddEntity5() {
         Line line1 = new Line(1, 2, 6, 2);
         canvas.addEntity(line1);
 

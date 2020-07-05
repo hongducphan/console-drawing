@@ -11,27 +11,27 @@ public class BucketFillCommandTest {
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate1() {
+    public void testCreateInvalid() {
         new BucketFillCommand( "-1", "1", "o");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate2() {
+    public void testCreateInvalid1() {
         new BucketFillCommand( "1", "-1", "o");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate3() {
+    public void testCreateInvalid2() {
         new BucketFillCommand( "1", "1");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate4() {
+    public void testCreateInvalid3() {
         new BucketFillCommand( "1");
     }
 
     @Test(expected = InvalidCommandParams.class)
-    public void testCreate6() {
+    public void testCreateInvalid4() {
         new BucketFillCommand();
     }
 

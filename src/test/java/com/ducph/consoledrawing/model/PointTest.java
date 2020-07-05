@@ -6,17 +6,17 @@ import org.junit.Test;
 public class PointTest {
 
     @Test
-    public void create() {
+    public void testCreate() {
         new Point(1, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create3() {
+    public void testCreateInvalid() {
         new Point(-1, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create4() {
+    public void testCreateInvalid2() {
         new Point(1, -7);
     }
 

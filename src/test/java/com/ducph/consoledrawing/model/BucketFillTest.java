@@ -5,17 +5,17 @@ import org.junit.Test;
 public class BucketFillTest {
 
     @Test
-    public void create() {
+    public void testCreate() {
         new BucketFill(1, 2, 'o');
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create3() {
+    public void testCreateInvalid() {
         new BucketFill(-1, 2, 'o');
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void create4() {
+    public void testCreateInvalid2() {
         new BucketFill(1, -2, 'o');
     }
 }
