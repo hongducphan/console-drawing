@@ -1,4 +1,4 @@
-# console-drawing
+# console-drawing by Phan Hong Duc
 
 # Technologies
 The program was built using:
